@@ -1,0 +1,81 @@
+vWhat is a Regex?
+First, a regex is a text string. For instance, foo is a regex. So is [A-Z]+:\d+.
+
+Those text strings describe patterns to find text or positions within a body of text. For instance, the regex foo matches the string foo, the regex [A-Z]+:\d+ matches string fragments like F:1 and GO:30, and the regex (?<=[a-z])(?=[A-Z]) matches the position in the string CamelCase where we shift from a lower-case letter to an upper-case letter.
+
+Typically, these patterns (which can be beautifully intricate and precise) are used for four main tasks: to find text within a larger body of text; to validate that a string conforms to a desired format; to replace text (or insert text at matched positions, which is the same process); and to split strings. 
+
+For instance, the CamelCase pattern from the last paragraph can be used to split MyLovelyValentine into its three component words. And you could use the regex _\d+_ to find digits within underscores (as in _12_) and to replace the underscores with double dashes, yielding --12--, something you could not do with a conventional search-and-replace (details for that technique are in the recipe about replacing one delimiter with another). 
+
+Who does this work of finding, replacing, splitting? A regex engine. For instance, you can find regex engines in text editors such as Notepad++ and EditPad Pro. You also find regex engines ready to roar in most programming languages—such as C#, Python, Perl, PHP, Java, JavaScript and Ruby. 
+
+Let's compress the definition from the earlier paragraphs: 
+
+A regex is a text string that describes a pattern that a regex engine uses in order to find text (or positions) in a body of text, typically for the purposes of validating, finding, replacing or splitting.
+
+
+Is a Regex the same as a Regular Expression?
+Mostly yes, with a little bit of no. At this stage, this is a semantic question—it depends on what one means by regular expression. That topic and other juicy details are discussed on the page about Regex vs. Regular Expressions. 
+
+
+About this Site
+Before we dive in—and only if you have time—I'd like to introduce this site and what makes it special.
+
+I love regular expressions. They are a small computer language of their own.
+When I was a young dinosaur, I didn't take the time to properly learn the syntax, largely because I really didn't feel like learning another language. Who needs regex, I thought, when your programming language has functions that let you dig into strings from the left, the middle and the right?
+
+What's more, the raw syntax you usually see in code that contains regexes used to intimidate me. Who wants to deal with a language that looks like this?
+
+(?s)/\*(?:(?!\*/)[*$ _/+\\-])*(.*?)[*$ _/+\\-]*?\*/ 
+
+It is well worth investing a bit of time in Regular Expressions. You won't look back! As it turns out, you really don't have to write your regular expressions like this. In many regex flavors, you can aerate your regex just like code, indenting and inserting comments as you go. If you walk with me through this site, you will be able to understand the expression above. Just as a preview, here is how the very same regex might look once "aerated" and commented, on multiple lines: 
+
+(?xs)           # Turn on free-spacing and DOTALL modes
+/\*             # Match a forward slash and a star
+(?:             # Some comment goes here
+   (?!\*/)          # Blah
+   [-+*_/ \\]       # Blah blah
+)*              # Blah blah blah
+(.*?)           # More blah
+[-+*_/$ \\]*?   # Yadda yadda blah
+\*/             # Match a star and a forward slash
+
+No doubt about it, even with comments and breathing room, there is something raw and experimental about writing a regex pattern. 
+
+Besides, how well your pattern performs doesn't only depend on applying correct syntax. There are several ways of doing things, and various regex engines may optimize some of these ways behind your back. 
+
+With regex, you are stepping down to a fairly low level, within earshot of the machine room. I like that. And I've been liking it all the more since learning about tools and safeguards to keep me from falling into the boiler. 
+
+
+A (hopefully) Different Presentation of Regex
+To really learn, you need to see the same information in different ways. There are excellent web pages about regex. Not many, but there are some, and I reference my favorite ones throughout the site. Then there are many pages that repeat the same old syntax reference. The problem is that for unfamiliar technical information to anchor itself in your mind—or at least in mine—you need to see it presented from various angles. When I started learning regex, as I was hopping from page to page and book to book, the content was much alike so the "information tree" wasn't yielding all its fruits. As a result, several questions that cut diagonally through the field of regex were staying unresolved.
+
+RexEgg tries to present regular expressions a bit differently, in the hope that these different angles help many people become more grounded in their knowledge of regex. If you are looking for a drawn-out primer, this is not the place, as I don't see the need to pollute our beautiful world wide web with another explanation of how to match "foo" in "foo bar". But if you take your time to read the carefully-built tables on the quick-launch page then perhaps the page about (? … ) syntax, you will experience what may be the most accelerated regex introduction around. 
+
+
+What Will you Find on this Site
+Oh, yes, and forget about practice, that's completely overrated. Just kidding. Get ready, because as far as I know, this site is one of the two most comprehensive regex sources on the net—along with Jan Goyvaerts excellent regex tutorial site. It aims to fill gaps in how regex information is presented elsewhere, including the major regex books. Here are some of the things you will find here. 
+
+? A step-by-step explanation of simple and advanced regular expressions crafted for various contexts (such as text matching, file renaming, search-and-replace).
+
+? A presentation of the many contexts where you may run into regular expressions (from Apache to your html editor and file manager), complete with examples.
+
+? A reference about (? … )—to reduce confusion by bringing all the pieces of syntax that start with an opening parenthesis and a question mark into a single place.
+
+? A discussion of Conditional Regexes, a topic about which there is little information. 
+
+? A discussion of Recursive Regexes, a topic about which there is very little information. 
+
+? Pages dedicated to regex in C#, Python, PHP and other languages.
+
+? Plenty of tips & tricks.
+
+? Sections about regex tools and regex books. 
+
+? And much more!
+
+I wish you lots of fun on your journey with regular expressions. 
+
+Smiles, 
+
+Rex 
